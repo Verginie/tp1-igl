@@ -12,6 +12,16 @@
 }
 .btn-primary:hover{
     background-color: #34314f;
+    border: 4px solid #692db7;
+}
+.btn-secondary{
+    background-color: #34314f;
+    border:none;
+}
+
+.btn-secondary:hover{
+    background-color: #692db7;
+    border: none;
 }
 .container-fluid{
     max-width: 100%;
@@ -24,12 +34,19 @@
 }
 
 form{
-    padding-top: 64px;
-    max-width:50%;
+    padding-top: 16px;
+    max-width:35%;
     min-height: 200px;
+    margin-top: 256px;
+    margin-bottom: 201px;
 }
 form input{
     margin: 16px;
+}
+
+.form-control{
+   border: none;
+    
 }
 .page-footer{
     margin-top: 24px;
@@ -40,3 +57,31 @@ form input{
     color: white;
     text-decoration: none;
 }
+ .table input{
+     min-width:72px;
+     max-width:100px;
+ }
+  table{
+      margin: 32px 24px 96px 24px;
+  }
+  #searchBar{
+      max-width: 500px;
+  }
+
+  #searchBar input{
+      border-radius:25px;
+      border: 1px solid #dee2e6;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd), thead{
+      background-color: white;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) .form-control{
+      border: 1px solid #dee2e6;
+  }
+
+  .table-striped tbody tr:nth-of-type(even) {
+    background-color:#f8f9fa;
+  }  
+
