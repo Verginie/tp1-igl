@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 
-
-//<td><button onClick ={this.cc}> ok </button> </td>
-
 class ETUDIANT extends Component {
     
-        state={
+          //////////////////////////////////////////////////////////////////////////////////////////////
+             state={
           note_cc :0,
           note_ci :0,
           note_cf :0,
           moyen :0        
            }
-
-
+         //////////////////////////////////////////////////////////////////////////////////////////////
            ecrire1 = event => {
             this.setState({ note_cc: event.currentTarget.value});
             this.props.item.Note_cc = parseInt(this.state.note_cc, 10) ;
@@ -22,7 +19,9 @@ class ETUDIANT extends Component {
                  parseInt(event.currentTarget.value, 10)
                         ) *(1/3) });                   
                               };
-          ecrire2 = event => {
+          //////////////////////////////////////////////////////////////////////////////////////////////
+
+            ecrire2 = event => {
             this.setState({ note_ci: event.currentTarget.value });   
             this.props.item.Note_ci = parseInt(this.state.note_ci, 10) ;
 
@@ -32,8 +31,8 @@ class ETUDIANT extends Component {
                 parseInt(event.currentTarget.value, 10)
                        ) *(1/3) }); 
 
-          };
-        
+                            };
+         //////////////////////////////////////////////////////////////////////////////////////////////
           ecrire3 = event => {
             this.setState({ note_cf: event.currentTarget.value });
             this.props.item.Note_cf = parseInt(this.state.note_cf, 10) ;
@@ -43,15 +42,11 @@ class ETUDIANT extends Component {
                 (this.state.moyen * 3 - parseInt(this.state.note_cf, 10)) + 
                 parseInt(event.currentTarget.value, 10)
                        ) *(1/3) }); 
-                 };
-           
-         
-           
-         
-    render() { 
-
-        return  (
-        <div className="container text-center">   
+                 }; 
+         //////////////////////////////////////////////////////////////////////////////////////////////
+             render() { 
+             return  (
+                <div className="container text-center">   
                     <tr size ='255'>
                         <th scope="row">{this.props.item.matricule}</th>
                             <td>{this.props.item.nom}</td>
