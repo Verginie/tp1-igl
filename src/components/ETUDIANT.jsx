@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 
 
-//<td><button onClick ={this.cc}> ok </button> </td>
-/*moyen : (
-  (this.state.moyen * 3 - parseFloat(this.state.note_ci, 10)) + 
-  parseFloat(event.currentTarget.value, 10)
-         ) *(1/3) });*/
 class ETUDIANT extends Component {
     
         state={
@@ -92,9 +87,6 @@ class ETUDIANT extends Component {
                             <td><input type="Number" step="0.25" min ="0" max="20" className="form-control" id="noteCI" placeholder="--"   onChange={this.ecrire2}  ></input></td>
                             <td><input type="Number" step="0.25"  min ="0" max="20" className="form-control" id="noteCF" placeholder="--"  onChange={this.ecrire3}  ></input></td>
                             <td className="moyenneEtudiant"> {this.state.moyen.toFixed(2)} </td>
-                            
-                        
-        
                     </tr>
           
         

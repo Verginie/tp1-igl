@@ -6,8 +6,8 @@ import {
     Link
   } from "react-router-dom";
 import Table from './table';
-import Footer from './footer';
-import Home from './Home'
+
+
 
   
 
@@ -43,14 +43,14 @@ class AuthentificationForm extends Component {
                     ()=>{
                         return( //Retourne la page d'accueil (authentification)
                             <div className="container text-center">  
-                            <form className="mx-auto text-center">
-                              <div className="form-group">
-                                <input   onChange={this.handleChange1} type="email" className="form-control" id="emailInput" placeholder="Adresse mail"></input>
-                                <input  onChange={this.handleChange2} type="password" className="form-control" id="passwordInput" placeholder="Password"></input>
-                              </div> 
-                            <button onClick={this.handleSubmit} type="submit" className="btn btn-primary text-uppercase"> Se connecter </button>
-                            </form>
-                                   </div> 
+                              <form className="mx-auto text-center">
+                                  <div className="form-group">
+                                    <input   onChange={this.handleChange1} type="email" className="form-control" id="emailInput" placeholder="Adresse mail"></input>
+                                    <input  onChange={this.handleChange2} type="password" className="form-control" id="passwordInput" placeholder="Password"></input>
+                                  </div> 
+                                  <button onClick={this.handleSubmit} type="submit" className="btn btn-primary text-uppercase"> Se connecter </button>
+                              </form>
+                            </div> 
                            
                         );
                     }

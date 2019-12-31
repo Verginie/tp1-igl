@@ -71,26 +71,26 @@ class Table extends Component {
                    
                     {/* Liste 2cp */}  
                     <div className="dropdown col-lg-1 mt-5">
-                        <a className="btn btn-secondary dropdown-toggle" href="./Home" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a className="btn btn-secondary dropdown-toggle" href="./dashboard" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                              2 CPI
                         </a>
 
                         <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a className="dropdown-item" href="./Home">Groupe 3</a>
-                            <a className="dropdown-item" href="./Home">Groupe 5</a>
+                            <a className="dropdown-item" href="./dashboard">Groupe 3</a>
+                            <a className="dropdown-item" href="./dashboard">Groupe 5</a>
                             
                         </div>
                     </div>
                     {/* Liste 1CS */}
                     <div className="dropdown col-lg-1 mt-5">
-                        <a className="btn btn-secondary dropdown-toggle" href="./Home" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a className="btn btn-secondary dropdown-toggle" href="./dashboard" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             1 CS
                         </a>
 
                         <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a className="dropdown-item" href="./Home">Groupe 1</a>
-                            <a className="dropdown-item" href="./Home">Groupe 2</a>
-                            <a className="dropdown-item" href="./Home">Groupe 4</a>
+                            <a className="dropdown-item" href="./dashboard">Groupe 1</a>
+                            <a className="dropdown-item" href="./dashboard">Groupe 2</a>
+                            <a className="dropdown-item" href="./dashboard">Groupe 4</a>
                             
                         </div>
                     </div>
@@ -99,21 +99,7 @@ class Table extends Component {
                           <input className="form-control" type="text" placeholder="Rechercher un étudiant" aria-label="Search" id="myInput"></input>
                         </div>
 
-                    {/* code recherche */}
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-                    <script>
-                        $(document).ready(function(){
-                            $("#myInput").on("keyup", function() {
-                                var value = $(this).val().toLowerCase();
-                                $("#myTable tr").filter(function() {
-                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                                });
-                            })
-                        });
-                    </script>
-
-
-                    {/* fin code de recherche */}
+                    
 
                 </div>
             </div>
@@ -123,7 +109,7 @@ class Table extends Component {
                         <table className=" table">
                           <thead>
                             <tr>
-                                <th scope="col"  >Matricule</th>
+                                <th scope="col" >Matricule</th>
                                 <th scope="col">Nom</th>
                                 <th scope="col">Prénom</th>
                                 <th scope="col">CC</th>
@@ -153,7 +139,7 @@ class Table extends Component {
                     </table>
 
             </div>
-                  </div>    
+        </div>    
          );
     }
 }

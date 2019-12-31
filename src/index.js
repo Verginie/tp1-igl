@@ -5,8 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import 'bootstrap/dist/js/bootstrap.js';
 import "./assets/style.css"
 import AuthentificationForm from './components/authentificationForm';
-
-//import Home from './components/Home';
 import Table from './components/table';
 
 
@@ -35,9 +33,9 @@ class App extends React.Component {
       render() {
       return (
         <div>
-            <ul>
+            
               <AuthentificationForm fonction1={this.logini} />      
-            </ul>
+            
         
         </div>
       );
