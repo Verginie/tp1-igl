@@ -8,6 +8,7 @@ import {
 import Table from './table';
 import Footer from './footer';
 import Home from './Home'
+
   
 
 class AuthentificationForm extends Component {
@@ -34,7 +35,7 @@ class AuthentificationForm extends Component {
              
                 <Route path="/dashboard" exact render={
                     ()=>{
-                        return(<Home/>);//élément à retourner dans le path /dashboard
+                        return(<Table/>);//élément à retourner dans le path /dashboard
                     }
                 }
                 />

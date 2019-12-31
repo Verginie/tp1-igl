@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ETUDIANT from './ETUDIANT';
+import $ from 'jquery'; 
 
 class Table extends Component {
     state = { 
@@ -69,66 +70,87 @@ class Table extends Component {
                     {/* Listes déroulantes */}
                    
                     {/* Liste 2cp */}  
-                         <div class="dropdown col-lg-1 mt-5">
-                        <a class="btn btn-secondary dropdown-toggle" href="./Home" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            2 CPI
+                    <div className="dropdown col-lg-1 mt-5">
+                        <a className="btn btn-secondary dropdown-toggle" href="./Home" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             2 CPI
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="./Home">Groupe 3</a>
-                            <a class="dropdown-item" href="./Home">Groupe 5</a>
+                        <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a className="dropdown-item" href="./Home">Groupe 3</a>
+                            <a className="dropdown-item" href="./Home">Groupe 5</a>
                             
                         </div>
                     </div>
                     {/* Liste 1CS */}
-                         <div class="dropdown col-lg-1 mt-5">
-                        <a class="btn btn-secondary dropdown-toggle" href="./Home" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div className="dropdown col-lg-1 mt-5">
+                        <a className="btn btn-secondary dropdown-toggle" href="./Home" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             1 CS
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="./Home">Groupe 1</a>
-                            <a class="dropdown-item" href="./Home">Groupe 2</a>
-                            <a class="dropdown-item" href="./Home">Groupe 4</a>
+                        <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a className="dropdown-item" href="./Home">Groupe 1</a>
+                            <a className="dropdown-item" href="./Home">Groupe 2</a>
+                            <a className="dropdown-item" href="./Home">Groupe 4</a>
                             
                         </div>
                     </div>
                     {/* Barre de recherche */}
                         <div className="mt-5 ml-auto col-lg-4" id="searchBar">
-                          <input className="form-control" type="text" placeholder="Rechercher un étudiant" aria-label="Search"></input>
+                          <input className="form-control" type="text" placeholder="Rechercher un étudiant" aria-label="Search" id="myInput"></input>
                         </div>
+
+                    {/* code recherche */}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                    <script>
+                        $(document).ready(function(){
+                            $("#myInput").on("keyup", function() {
+                                var value = $(this).val().toLowerCase();
+                                $("#myTable tr").filter(function() {
+                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                });
+                            })
+                        });
+                    </script>
+
+
+                    {/* fin code de recherche */}
+
                 </div>
             </div>
 
             {/* Tableau des étudiants */}
                    <div className="container table-responsive-sm table-striped">
-                        <table class=" table">
+                        <table className=" table">
                           <thead>
-                         <tr>
-                         <th scope="col"  >Matricule</th>
-                         <th scope="col">Nom</th>
-                         <th scope="col">Prénom</th>
-                         <th scope="col">CC</th>
-                         <th scope="col">CI</th>
-                         <th scope="col">CF</th>
-                         <th scope="col">Moyenne</th>
-                    
-                         </tr>
+                            <tr>
+                                <th scope="col"  >Matricule</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Prénom</th>
+                                <th scope="col">CC</th>
+                                <th scope="col">CI</th>
+                                <th scope="col">CF</th>
+                                <th scope="col">Moyenne</th>
+                            </tr>
                           </thead>
-                          <tbody>
-                              <ul>
-                        {this.state.Mes_Etudiants.map(Etudiant => (<ETUDIANT item={Etudiant} />))}
-                              </ul> 
+                          <tbody  id="myTable">
+                             
+                                 {this.state.Mes_Etudiants.map(Etudiant => (<ETUDIANT item={Etudiant} />))}
+                              
     
                               <tr>
-                        {/* dernière ligne concernant le calcul de la moyenne générale */}
-                        <th><caption>Liste des étudiants</caption></th>
-                        
-                        <td> <button onClick ={ this.calculer_moyenne} className="btn btn-sm btn-primary text-uppercase" > Calculer la moyenne</button></td>
-                    </tr>
+                                    {/* dernière ligne concernant le calcul de la moyenne générale */}
+                                <th><caption>Liste des étudiants</caption></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                    
+                                <td> <button onClick ={ this.calculer_moyenne} className="btn btn-sm btn-primary text-uppercase" > Calculer la moyenne</button></td>
+                              </tr>
                            
                          </tbody>
-                         </table>
+                    </table>
 
             </div>
                   </div>    

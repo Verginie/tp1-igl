@@ -5,11 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import 'bootstrap/dist/js/bootstrap.js';
 import "./assets/style.css"
 import AuthentificationForm from './components/authentificationForm';
-import Footer from './components/footer';
-import Home from './components/Home';
 
-//ReactDom.render(<AuthentificationForm/>,document.getElementById('root'));
-// ReactDom.render(<Footer/>,document.getElementById('footer'));
+//import Home from './components/Home';
+import Table from './components/table';
+
 
 class App extends React.Component {
 
@@ -27,7 +26,7 @@ class App extends React.Component {
             const comptes = [...this.state.comptes];
               comptes.map(compte =>{
                        if(compte.mail === email && compte.password === pswd){
-                       ReactDom.render(<Home my_compte={compte} />,document.getElementById('root'));
+                       ReactDom.render(<Table my_compte={compte} />,document.getElementById('root'));
               }
             })
               
@@ -37,9 +36,9 @@ class App extends React.Component {
       return (
         <div>
             <ul>
-            <AuthentificationForm fonction1={this.logini} />      
+              <AuthentificationForm fonction1={this.logini} />      
             </ul>
-        <Footer/>
+        
         </div>
       );
     }
