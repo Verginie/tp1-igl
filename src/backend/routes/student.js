@@ -25,7 +25,7 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: add student ... failed ++++++' + err));
 });
 
-///////////////////////////////////////////////// modification d'un etudiant 
+/////////////////////////////////////////////// modification d'un etudiant 
 router.route('/update/:id').post((req, res) => {
   
   Student.findById(req.params.id)
