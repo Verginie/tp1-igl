@@ -8,8 +8,6 @@ import AuthentificationForm from './components/authentificationForm';
 import Home from './components/Home';
 import axios from 'axios';
 
-//ReactDom.render(<AuthentificationForm/>,document.getElementById('root'));
-// ReactDom.render(<Footer/>,document.getElementById('footer'));
 
 class App extends React.Component {
 
@@ -17,11 +15,7 @@ class App extends React.Component {
       comptes :[]
        
           }
-          /*comptes :[
-        { id: 1,mail : "yasser", password :"yasser",tab:[{id_annee :2,id_group :5},{id_annee :2,id_group :7}]},
-        { id: 2,mail : "taki", password :"taki",tab:[{id_annee :1,id_group :1},{id_annee :1,id_group :2}] },
-        { id: 3, mail : "bch", password :"bch" ,tab:[{id_annee :3,id_group :7},{id_annee :3,id_group :8}]}
-                ],*/
+         
 ///////////////////////////////////////////////////////////////////////////////
                     componentDidMount(){
                         axios.get('http://localhost:5000/teacher/')
