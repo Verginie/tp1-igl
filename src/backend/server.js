@@ -26,7 +26,7 @@ app.use(express.json());
     );
 
 /////////////////////////////////////////////////////////////////
-
+   ///********************************************** NE SUPPRIME PAS CES COMMENTAIRES ************ 
        /* Teacher.create(
     { id: 1,nom:"yasser",prenom:"yasser",mail : "yyyy", password :"yyyy",TABgroupes:[]}
   );
