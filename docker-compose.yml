@@ -1,0 +1,27 @@
+version: '3'
+services:
+  ui:
+    build: ./
+    volumes:
+      - .:/c/Users/Louk/Desktop/ui
+      - /c/Users/Louk/Desktop/ui/node_modules
+    ports:
+      - 3000:3000
+    command: npm start
+    depends_on:
+      - api
+  api:
+    build: ./src/backend/
+    volumes: 
+      - ./src/backend:/c/Users/Louk/Desktop/api
+      - /c/Users/Louk/Desktop/api/node_modules
+    ports:
+      - 5000:5000
+    command: npm start
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - 4000:4000
+
