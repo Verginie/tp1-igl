@@ -42,9 +42,7 @@ componentDidMount(){
 
                                                                                                                             }          
                                                                     } );
-                                        list.map( e=> som =som+e.MY_moyen);
-                                        console.log(som);
-                                        
+                                        list.map( e=> som =som+e.MY_moyen);                                        
                                         m =(som/nb);
                                         this.setState({moyenne_classe : m  });
 
