@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import ETUDIANT from './ETUDIANT';
+
+
+
+
+////// VOICI LA TABLE = HOME PAGE 
 class Home extends Component {
 
                 state = { 
